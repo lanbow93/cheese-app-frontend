@@ -1,0 +1,33 @@
+// Variables for SASS Sheet
+$primarycolor: #F6E481;
+$secondarycolor: purple;
+
+
+@mixin standard-font-colors {
+    color: $secondarycolor;
+    background-color: $primarycolor;
+}
+
+@mixin inverted-font-colors {
+    color: $primarycolor;
+    background-color: $secondarycolor;
+}
+
+nav {
+    @include standard-font-colors;
+    display: flex;
+    justify-content: flex-start;
+  
+    a {
+      text-decoration: none;
+      div {
+        font-style: 'MedievalSharp', cursive;
+        margin: 10px;
+        font-size: large;
+      }
+    }
+  }
+
+  img {
+    width: 20rem;
+  }
