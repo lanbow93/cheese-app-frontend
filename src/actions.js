@@ -21,3 +21,24 @@ export const createAction = async ({request}) => {
 
     return redirect("/")
 }
+
+export const updateAction = async ({request, params}) => {
+    const formData = await request.formData();
+
+    const newCheese = {
+        name: formData.get("name"),
+        countryOfOrigin: formData.get("countryOfOrigin"),
+        image: formData.get("image")
+    }
+
+    await fetch(URL + `/cheeses/${params.id}`,{
+        method: "put",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newCheese)
+    })
+
+    return redirect("/")
+
+}
