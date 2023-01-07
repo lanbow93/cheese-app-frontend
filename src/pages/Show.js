@@ -13,9 +13,9 @@ const Show = (props) => {
 
         <Form action={`/update/${cheese._id}`} method="post">
             <h2>Update "{cheese.name}"</h2>
-            <input type="text" name="name" placeholder={cheese.name} />
-            <input type="text" name="countryOfOrigin" placeholder={cheese.countryOfOrigin} />
-            <input type="text" name="image" placeholder={cheese.image} />
+            <input type="text" name="name" defaultValue={cheese.name} />
+            <input type="text" name="countryOfOrigin" defaultValue={cheese.countryOfOrigin} />
+            <input type="text" name="image" defaultValue={cheese.image} />
             <input type="submit" value={`Update ${cheese.name}`} />
         </Form>
 
