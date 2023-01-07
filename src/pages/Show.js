@@ -7,6 +7,10 @@ const Show = (props) => {
         <img src={cheese.image} alt={cheese.name} />
         <h3>Country of Origin: {cheese.countryOfOrigin}</h3>
 
+        <Form action={`/delete/${cheese._id}`} method="post">
+            <input type="submit" value={`Delete ${cheese.name}`} />
+        </Form>
+
         <Form action={`/update/${cheese._id}`} method="post">
             <h2>Update "{cheese.name}"</h2>
             <input type="text" name="name" placeholder={cheese.name} />
